@@ -1,2 +1,2 @@
 # hello-world-site
-Trial website 
+ChatGPT trial website 
