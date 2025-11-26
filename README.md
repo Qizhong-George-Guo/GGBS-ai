@@ -1,2 +1,2 @@
-# hello-world-site
-ChatGPT trial website 
+# GGBS-website
+Launched 
