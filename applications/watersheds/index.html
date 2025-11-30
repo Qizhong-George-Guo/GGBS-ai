@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Watershed Management – GGBS Applications</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description"
+        content="Watershed management applications of the GGBS Framework – integrating green, grey, blue, and smart systems across catchments, rivers, reservoirs, and floodplains." />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --bg-alt: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --border: #e5e7eb;
+      --max-width: 960px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background-color: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+    nav a { font-size: 0.9rem; color: var(--muted); }
+    nav a.active { color: var(--accent); font-weight: 600; }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+      display: flex; align-items: baseline; gap: 0.4rem;
+    }
+    .brand span:last-child {
+      font-weight: 500; font-size: 0.85rem; color: var(--muted);
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    .breadcrumbs {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+    .breadcrumbs a { color: var(--muted); }
+    .breadcrumbs span { margin: 0 0.25rem; }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.2rem);
+      line-height: 1.25;
+      margin: 0 0 0.75rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 40rem;
+      margin: 0 0 1.2rem;
+    }
+
+    .subnav {
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .subnav a { margin-right: 0.75rem; }
+
+    .section {
+      margin-top: 2rem;
+      background-color: var(--bg-alt);
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      padding: 1.5rem 1.5rem 1.75rem;
+    }
+
+    .section h2 {
+      font-size: 1.35rem;
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+    }
+
+    .section p {
+      margin-top: 0.25rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .section ul {
+      padding-left: 1.2rem;
+      margin-top: 0.25rem;
+      margin-bottom: 0.4rem;
+    }
+    .section li { margin-bottom: 0.25rem; }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.5rem;
+    }
+
+    .pill-row {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background-color: var(--accent-soft);
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      white-space: nowrap;
+    }
+
+    .mini-card {
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      padding: 0.85rem 0.95rem;
+      background-color: #f9fafb;
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .mini-card strong { display: block; margin-bottom: 0.2rem; }
+
+    .note-box {
+      margin-top: 0.8rem;
+      padding: 0.75rem 0.9rem;
+      border-radius: 0.6rem;
+      background-color: #eff6ff;
+      border: 1px solid #bfdbfe;
+      font-size: 0.9rem;
+      color: #1e3a8a;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background-color: var(--bg-alt);
+      margin-top: 1rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.25rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 720px) {
+      .two-col { grid-template-columns: 1fr; }
+      header { position: static; }
+      .nav-shell { flex-direction: column; align-items: flex-start; }
+      nav { justify-content: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="nav-shell">
+    <div class="brand">
+      <span>GGBS</span>
+      <span>Green–Grey–Blue–Smart Infrastructure</span>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/framework/">Framework</a>
+      <a href="/applications/" class="active">Applications</a>
+      <a href="/resources/">Resources</a>
+      <a href="/founder/">Founder</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="breadcrumbs">
+    <a href="/">Home</a> <span>›</span>
+    <a href="/applications/">Applications</a> <span>›</span>
+    <span>Watershed Management</span>
+  </div>
+
+  <section>
+    <div class="hero-eyebrow">Applications · River Basins & Watersheds</div>
+    <h1 class="hero-title">Watershed Management</h1>
+    <p class="hero-subtitle">
+      Watersheds link headwaters, cities, reservoirs, floodplains, estuaries,
+      and coasts. The GGBS Framework helps integrate hydrology, hydraulics,
+      ecology, land use, and infrastructure into unified strategies for flood
+      resilience, sediment management, and water-quality improvement.
+    </p>
+
+    <div class="subnav">
+      Other application areas:
+      <a href="/applications/urban-stormwater/">Urban Stormwater</a>
+      <a href="/applications/estuaries/">Estuaries &amp; Tidal Rivers</a>
+      <a href="/applications/coasts/">Coasts &amp; Shorelines</a>
+      <a href="/applications/flood-risk/">Flood Risk &amp; Resilience</a>
+      <a href="/applications/sponge-city/">Sponge City / Low-Impact</a>
+      <a href="/applications/data-models/">Data, Models &amp; AI</a>
+    </div>
+
+    <div class="pill-row">
+      <span class="pill">Fluvial flooding</span>
+      <span class="pill">Reservoir operations</span>
+      <span class="pill">Sediment management</span>
+      <span class="pill">Water quality</span>
+      <span class="pill">Floodplains & riparian systems</span>
+    </div>
+  </section>
+
+  <section class="section two-col">
+    <div>
+      <h2>Why Watersheds Matter</h2>
+      <p>
+        Watersheds are the natural scale at which hydrologic, hydraulic,
+        ecological, and human processes interact. Urban runoff, agricultural
+        loads, forest cover, dams, levees, and channel modifications all affect
+        downstream conditions.
+      </p>
+      <p>
+        Key challenges across watersheds include:
+      </p>
+      <ul>
+        <li>Upstream rainfall–runoff amplification from land-use change;</li>
+        <li>Increase in fluvial flooding and floodplain encroachment;</li>
+        <li>Sediment imbalances from erosion, channelization, or reservoirs;</li>
+        <li>Nutrient and pollutant delivery to rivers, lakes, and estuaries;</li>
+        <li>Fragmented planning across jurisdictions and sectors.</li>
+      </ul>
+      <p>
+        GGBS provides a way to organize these issues and evaluate solutions
+        that span multiple dimensions and scales.
+      </p>
+    </div>
+
+    <div>
+      <h2>GGBS View of Watershed Systems</h2>
+      <p>
+        In watershed management, each GGBS dimension plays a distinct and
+        complementary role:
+      </p>
+      <ul>
+        <li><strong>Green</strong> reduces peak flows and improves soil and vegetation conditions;</li>
+        <li><strong>Grey</strong> provides conveyance, storage, and protection where needed;</li>
+        <li><strong>Blue</strong> includes rivers, wetlands, lakes, and reservoirs that route water and sediment;</li>
+        <li><strong>Smart</strong> monitors flows, models scenarios, and supports real-time and seasonal operations.</li>
+      </ul>
+      <div class="note-box">
+        A watershed-scale perspective is essential to avoid “fixing one
+        problem while creating another” downstream or upstream.
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Key Watershed Strategies Using GGBS</h2>
+
+    <div class="mini-card">
+      <strong>Hybrid floodplain systems</strong>
+      Combining levees with restored wetlands and setback floodplains to
+      balance protection and ecological function.
+    </div>
+
+    <div class="mini-card">
+      <strong>Reservoir optimization</strong>
+      Using models, forecasts, and rule curves to operate reservoirs for
+      multipurpose goals (flood control, water supply, ecology).
+    </div>
+
+    <div class="mini-card">
+      <strong>Headwater nature-based solutions</strong>
+      Reforestation, soil rehabilitation, and agricultural BMPs to reduce peak
+      flows and sediment loads at the source.
+    </div>
+
+    <div class="mini-card">
+      <strong>Channel and riparian restoration</strong>
+      Stabilizing channels using natural processes and reconnecting
+      floodplains to improve sediment balance and habitat.
+    </div>
+
+    <div class="mini-card">
+      <strong>Urban–rural integration</strong>
+      Coordinating GI in cities with upstream watershed strategies and
+      downstream receiving-water goals.
+    </div>
+
+    <div class="mini-card">
+      <strong>Smart monitoring networks</strong>
+      Tracking flows, sediment, nutrients, turbidity, and temperature across
+      watershed nodes to support early warning and adaptive management.
+    </div>
+  </section>
+
+  <section class="section two-col">
+    <div>
+      <h2>Hydrology, Sediment, and Water Quality</h2>
+      <p>
+        Watersheds link hydrology, sediment dynamics, and water quality:
+      </p>
+      <ul>
+        <li>Rainfall–runoff generation in uplands controls flood peaks;</li>
+        <li>Sediment production and transport shape channels and habitat;</li>
+        <li>Nutrient loads affect eutrophication in downstream lakes and estuaries;</li>
+        <li>Land use influences infiltration, evapotranspiration, and storage.</li>
+      </ul>
+      <p>
+        GGBS encourages integrated modeling and monitoring to evaluate tradeoffs
+        and co-benefits across multiple objectives.
+      </p>
+    </div>
+
+    <div>
+      <h2>Scales of Watershed Application</h2>
+      <p>Watershed applications span multiple scales:</p>
+      <ul>
+        <li><strong>Local catchments</strong> controlling upstream runoff and erosion;</li>
+        <li><strong>Sub-watersheds</strong> integrating land use with river corridors;</li>
+        <li><strong>River basins</strong> balancing storage, conveyance, water supply, and habitat;</li>
+        <li><strong>Continental systems</strong> with large dams, sediment transport, and delta dynamics.</li>
+      </ul>
+      <p>
+        Examples include tributary restoration, mainstem reservoir management,
+        and basin-wide sediment and nutrient strategies.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Connections to Other GGBS Applications</h2>
+    <p>
+      Watersheds connect upstream and downstream environments. Within GGBS:
+    </p>
+    <ul>
+      <li>
+        Upland and agricultural runoff connects to
+        <a href="/applications/urban-stormwater/">Urban Stormwater</a>.
+      </li>
+      <li>
+        River flows and loads influence
+        <a href="/applications/estuaries/">Estuaries & Tidal Rivers</a>
+        and <a href="/applications/coasts/">Coasts & Shorelines</a>.
+      </li>
+      <li>
+        Watershed-scale flood processes integrate with
+        <a href="/applications/flood-risk/">Flood Risk & Resilience</a>.
+      </li>
+      <li>
+        Monitoring networks and models tie directly to
+        <a href="/applications/data-models/">Data, Models & AI</a>.
+      </li>
+    </ul>
+    <p>
+      As the Applications section evolves, this page can include specific case
+      studies such as urbanizing watersheds, Mississippi River Basin analysis,
+      and Sponge City watershed strategies.
+    </p>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2025 GGBS – Green–Grey–Blue–Smart Infrastructure Framework</div>
+    <div>Hosted on GitHub Pages</div>
+  </div>
+</footer>
+
+</body>
+</html>
