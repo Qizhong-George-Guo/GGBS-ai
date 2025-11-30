@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Media, Talks & Outreach – GGBS Resources</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description"
+        content="Media, invited talks, outreach materials, interviews, videos, and visual explainers related to the Green–Grey–Blue–Smart (GGBS) Framework." />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --bg-alt: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --border: #e5e7eb;
+      --max-width: 960px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background-color: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+    nav a { font-size: 0.9rem; color: var(--muted); }
+    nav a.active { color: var(--accent); font-weight: 600; }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+      display: flex; align-items: baseline; gap: 0.4rem;
+    }
+    .brand span:last-child {
+      font-weight: 500; font-size: 0.85rem; color: var(--muted);
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    .breadcrumbs {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .breadcrumbs a { color: var(--muted); }
+    .breadcrumbs span { margin: 0 0.25rem; }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.2rem);
+      line-height: 1.25;
+      margin: 0 0 0.75rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 42rem;
+      margin: 0 0 1.2rem;
+    }
+
+    .section {
+      margin-top: 2rem;
+      background-color: var(--bg-alt);
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      padding: 1.5rem 1.5rem 1.75rem;
+    }
+
+    .section h2 {
+      font-size: 1.3rem;
+      margin-top: 0;
+      margin-bottom: 0.8rem;
+    }
+
+    .subheading {
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      font-size: 1.05rem;
+    }
+
+    .item-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .item {
+      margin-bottom: 1.1rem;
+      padding-bottom: 0.9rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .item-title {
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .item-meta {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .item-links a {
+      margin-right: 0.7rem;
+      font-size: 0.9rem;
+    }
+
+    .tag-row {
+      margin-top: 0.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      background-color: var(--accent-soft);
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      white-space: nowrap;
+    }
+
+    .note-box {
+      margin-top: 1rem;
+      padding: 0.75rem 0.9rem;
+      border-radius: 0.6rem;
+      background-color: #eff6ff;
+      border: 1px solid #bfdbfe;
+      font-size: 0.9rem;
+      color: #1e3a8a;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background-color: var(--bg-alt);
+      margin-top: 1rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.25rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="nav-shell">
+    <div class="brand">
+      <span>GGBS</span>
+      <span>Green–Grey–Blue–Smart Infrastructure</span>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/framework/">Framework</a>
+      <a href="/applications/">Applications</a>
+      <a href="/resources/" class="active">Resources</a>
+      <a href="/founder/">Founder</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="breadcrumbs">
+    <a href="/">Home</a> ›
+    <a href="/resources/">Resources</a> ›
+    <span>Media</span>
+  </div>
+
+  <section>
+    <div class="hero-eyebrow">Resources</div>
+    <h1 class="hero-title">Media, Talks &amp; Outreach</h1>
+    <p class="hero-subtitle">
+      Selected presentations, invited lectures, interviews, short videos, and
+      media posts that communicate the concepts and applications of the
+      Green–Grey–Blue–Smart (GGBS) Framework.  
+      Placeholders below can be replaced with real links, PDFs, and video URLs.
+    </p>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- INVITED TALKS -->
+  <!-- ============================================================= -->
+
+  <section class="section">
+    <div class="subheading">Invited Talks &amp; Keynote Lectures</div>
+
+    <ul class="item-list">
+
+      <li class="item">
+        <div class="item-title">
+          Integrating Green, Grey, Blue &amp; Smart Infrastructure for Flood Resilience
+        </div>
+        <div class="item-meta">
+          Keynote Lecture, International Water Resources Conference, 2024
+        </div>
+        <div class="item-links">
+          <a href="#">Slides (PDF)</a>
+          <a href="#">Event Page</a>
+        </div>
+        <div class="tag-row">
+          <span class="tag">GGBS</span>
+          <span class="tag">Flood resilience</span>
+        </div>
+      </li>
+
+      <li class="item">
+        <div class="item-title">
+          Sponge City Evolution: Lessons from U.S. and China
+        </div>
+        <div class="item-meta">
+          Invited Seminar, Civil Engineering Forum, 2023
+        </div>
+        <div class="item-links">
+          <a href="#">Slides (PDF)</a>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Sponge City</span>
+          <span class="tag">GI</span>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- INTERVIEWS & ARTICLES -->
+  <!-- ============================================================= -->
+
+  <section class="section">
+    <div class="subheading">Interviews &amp; Featured Articles</div>
+
+    <ul class="item-list">
+
+      <li class="item">
+        <div class="item-title">
+          “Building Resilient Water Systems in a Changing Climate” – Interview Feature
+        </div>
+        <div class="item-meta">
+          Water & Cities Magazine, 2024 — Q&A with Q. Guo
+        </div>
+        <div class="item-links">
+          <a href="#">Article Link</a>
+          <a href="#">PDF</a>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Interview</span>
+          <span class="tag">Resilience</span>
+        </div>
+      </li>
+
+      <li class="item">
+        <div class="item-title">
+          “Modern Coastal Challenges” – Expert Commentary
+        </div>
+        <div class="item-meta">
+          Coastal Engineering Today, 2023
+        </div>
+        <div class="item-links">
+          <a href="#">Article</a>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Coastal</span>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- SHORT VIDEOS -->
+  <!-- ============================================================= -->
+
+  <section class="section">
+    <div class="subheading">Short Videos &amp; Video Explain
+ 
+    </div>
+    <ul class="item-list">
+
+      <li class="item">
+        <div class="item-title">
+          Green Stormwater Infrastructure – 9-Minute Overview (Chinese)
+        </div>
+        <div class="item-meta">
+          AI-generated video based on full English lecture notes; suitable for
+          public outreach.
+        </div>
+        <div class="item-links">
+          <a href="#">Video Link</a>
+          <a href="#">Summary (PDF)</a>
+        </div>
+        <div class="tag-row">
+          <span class="tag">AI-generated</span>
+          <span class="tag">GI</span>
+          <span class="tag">Chinese</span>
+        </div>
+      </li>
+
+      <li class="item">
+        <div class="item-title">
+          Coastal Engineering – 8-Minute Condensed Lecture Video
+        </div>
+        <div class="item-meta">
+          Short explainer summarizing hard coastal structures and coastal
+          processes.
+        </div>
+        <div class="item-links">
+          <a href="#">Video Link</a>
+          <a href="#">Key Frames (PDF)</a>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Coastal</span>
+          <span class="tag">AI</span>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- SOCIAL MEDIA & PUBLIC POSTS -->
+  <!-- ============================================================= -->
+
+  <section class="section">
+    <div class="subheading">Social Media, Public Notes &amp; Outreach Posts</div>
+
+    <ul class="item-list">
+
+      <li class="item">
+        <div class="item-title">
+          LinkedIn Series – Coastal Engineering Infographics
+        </div>
+        <div class="item-meta">
+          Seven-topic infographic series shared on LinkedIn (2024).
+        </div>
+        <div class="item-links">
+          <a href="#">LinkedIn Post</a>
+          <a href="#">PDF Collection</a>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Infographics</span>
+          <span class="tag">Coastal</span>
+        </div>
+      </li>
+
+      <li class="item">
+        <div class="item-title">
+          WeChat Articles – Sponge City Reflections and Case Studies
+        </div>
+        <div class="item-meta">
+          Several short-form outreach articles for practitioner audiences (Chinese).
+        </div>
+        <div class="item-links">
+          <a href="#">WeChat Links</a>
+          <a href="#">PDF</a>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Sponge City</span>
+          <span class="tag">Outreach</span>
+          <span class="tag">Chinese</span>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+  <section class="note-box">
+    To complete this section, upload slide decks, PDFs, and media files to your
+    GitHub repository (e.g., <code>/media/</code> or <code>/talks/</code>) and
+    replace the placeholder <code>href="#”</code> with your real file paths or
+    external URLs (YouTube, LinkedIn, WeChat public account pages).  
+    Each talk or outreach item will then have a stable, shareable URL on
+    <strong>GGBS.ai</strong>.
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2025 GGBS – Green–Grey–Blue–Smart Infrastructure Framework</div>
+    <div>Hosted on GitHub Pages</div>
+  </div>
+</footer>
+
+</body>
+</html>
