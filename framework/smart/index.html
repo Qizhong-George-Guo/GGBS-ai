@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Smart / Intelligent Infrastructure – GGBS Framework</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description"
+        content="Smart and intelligent infrastructure within the GGBS Framework – monitoring, models, analytics, and AI-driven decision support for integrated water and urban systems." />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --bg-alt: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --border: #e5e7eb;
+      --max-width: 960px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      background-color: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+
+    .brand span:last-child {
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    nav a.active {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    .breadcrumbs {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .breadcrumbs a {
+      color: var(--muted);
+    }
+
+    .breadcrumbs span {
+      margin: 0 0.25rem;
+    }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.2rem);
+      line-height: 1.25;
+      margin: 0 0 0.75rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 40rem;
+      margin: 0 0 1.2rem;
+    }
+
+    .subnav {
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .subnav a {
+      margin-right: 0.75rem;
+    }
+
+    .section {
+      margin-top: 2rem;
+      background-color: var(--bg-alt);
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      padding: 1.5rem 1.5rem 1.75rem;
+    }
+
+    .section h2 {
+      font-size: 1.4rem;
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+    }
+
+    .section p {
+      margin-top: 0.25rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .section ul {
+      padding-left: 1.2rem;
+      margin-top: 0.25rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .section li {
+      margin-bottom: 0.25rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.5rem;
+    }
+
+    .pill-row {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background-color: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid #bfdbfe;
+      white-space: nowrap;
+    }
+
+    .note-box {
+      margin-top: 0.8rem;
+      padding: 0.75rem 0.9rem;
+      border-radius: 0.6rem;
+      background-color: #eff6ff;
+      border: 1px solid #dbeafe;
+      font-size: 0.9rem;
+      color: #1f2937;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background-color: var(--bg-alt);
+      margin-top: 1rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.25rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 720px) {
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        position: static;
+      }
+
+      .nav-shell {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-shell">
+      <div class="brand">
+        <span>GGBS</span>
+        <span>Green–Grey–Blue–Smart Infrastructure</span>
+      </div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/framework/" class="active">Framework</a>
+        <a href="/applications/">Applications</a>
+        <a href="/resources/">Resources</a>
+        <a href="/founder/">Founder</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumbs">
+      <a href="/">Home</a> <span>›</span>
+      <a href="/framework/">Framework</a> <span>›</span>
+      <span>Smart / Intelligent Infrastructure</span>
+    </div>
+
+    <section>
+      <div class="hero-eyebrow">Framework · Smart Dimension</div>
+      <h1 class="hero-title">Smart &amp; Intelligent Infrastructure</h1>
+      <p class="hero-subtitle">
+        The Smart dimension of the GGBS Framework brings together monitoring,
+        modeling, data analytics, and AI-driven decision support to make green,
+        grey, and blue infrastructure more observable, predictable, and
+        adaptive.
+      </p>
+      <div class="subnav">
+        Related dimensions:
+        <a href="/framework/green/">Green</a>
+        <a href="/framework/grey/">Grey</a>
+        <a href="/framework/blue/">Blue</a>
+        <a href="/framework/overview/">Overview</a>
+      </div>
+      <div class="pill-row">
+        <span class="pill">Monitoring networks</span>
+        <span class="pill">Hydrologic &amp; coastal models</span>
+        <span class="pill">Data platforms</span>
+        <span class="pill">Decision support</span>
+        <span class="pill">AI &amp; machine learning</span>
+        <span class="pill">Digital twins</span>
+      </div>
+    </section>
+
+    <section class="section two-col">
+      <div>
+        <h2>Role of the Smart Dimension in GGBS</h2>
+        <p>
+          While green, grey, and blue infrastructure represent physical systems,
+          the smart dimension represents the <strong>information layer</strong>
+          that sits on top of them. It includes sensing, data management,
+          models, and algorithms that help us understand system behavior, test
+          alternatives, and operate infrastructure in more adaptive ways.
+        </p>
+        <p>
+          In the GGBS Framework, smart infrastructure:
+        </p>
+        <ul>
+          <li>Generates data about how green, grey, and blue systems perform;</li>
+          <li>Supports forecasting of floods, water levels, waves, and water quality;</li>
+          <li>Enables early warning and real-time adjustments to operations;</li>
+          <li>Supports scenario analysis for planning and design under uncertainty;</li>
+          <li>Links physical infrastructure with institutional decision-making.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Smart Infrastructure and Intelligent Systems</h2>
+        <p>
+          In GGBS, “smart” and “intelligent” refer to the combination of
+          infrastructure that can be monitored and controlled, together with the
+          analytical tools that support decisions. This includes both digital
+          technologies and the workflows that use them.
+        </p>
+        <p>
+          Smart and intelligent systems within GGBS include:
+        </p>
+        <ul>
+          <li>
+            <strong>Intelligent infrastructure:</strong> systems that can be
+            monitored in real time and adjusted in response to changing
+            conditions;
+          </li>
+          <li>
+            <strong>Intelligent decision support:</strong> tools that help
+            engineers, operators, and decision-makers explore trade-offs and
+            prioritize actions.
+          </li>
+        </ul>
+        <div class="note-box">
+          In practice, the smart dimension is not only about technology; it is
+          about how information is used to support resilient, equitable, and
+          sustainable decisions across green, grey, and blue systems.
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Key Components of Smart / Intelligent Infrastructure</h2>
+      <p>
+        The smart dimension can be broken down into several interacting
+        components:
+      </p>
+      <ul>
+        <li>
+          <strong>Monitoring networks:</strong> rain gauges, water-level
+          sensors, flow meters, water-quality probes, wave buoys, remote
+          sensing, and citizen-science observations.
+        </li>
+        <li>
+          <strong>Data platforms:</strong> databases, dashboards, and cloud
+          services that store, curate, and visualize data from multiple
+          sources.
+        </li>
+        <li>
+          <strong>Models and simulators:</strong> hydrologic, hydraulic,
+          groundwater, sediment-transport, and coastal models that represent
+          system behavior across scales.
+        </li>
+        <li>
+          <strong>Analytics and optimization:</strong> tools for calibration,
+          sensitivity analysis, uncertainty assessment, and optimization of
+          operations or design.
+        </li>
+        <li>
+          <strong>AI and machine learning:</strong> methods for pattern
+          recognition, forecasting, anomaly detection, and scenario ranking
+          based on large or complex data sets.
+        </li>
+        <li>
+          <strong>Decision-support interfaces:</strong> interactive dashboards,
+          planning tools, and model-based workflows that connect technical
+          analyses with policy and management choices.
+        </li>
+      </ul>
+      <p>
+        These components do not replace engineering judgment or local
+        knowledge. Instead, they are intended to enhance them.
+      </p>
+    </section>
+
+    <section class="section two-col">
+      <div>
+        <h2>Applications Across Green, Grey, and Blue Systems</h2>
+        <p>
+          Smart and intelligent systems are relevant wherever decisions depend
+          on changing hydrologic and hydraulic conditions. Examples include:
+        </p>
+        <ul>
+          <li>
+            <strong>Urban stormwater:</strong> real-time control of detention
+            basins, green infrastructure, and pump stations based on rainfall
+            forecasts and observed flows.
+          </li>
+          <li>
+            <strong>Watershed and river-basin planning:</strong> model-based
+            analysis of reservoir operations, levee systems, land-use change,
+            and nature-based solutions at large scales.
+          </li>
+          <li>
+            <strong>Estuaries and coasts:</strong> forecasting of tides, storm
+            surge, waves, and compound flooding to support warnings and
+            emergency response.
+          </li>
+          <li>
+            <strong>Water quality and ecology:</strong> using data and models
+            to evaluate nutrient loads, sediment dynamics, and habitat
+            conditions under different scenarios.
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h2>Digital Twins and Adaptive Management</h2>
+        <p>
+          As monitoring and modeling capabilities grow, the idea of a
+          <strong>digital twin</strong>—a dynamic digital representation of a
+          physical system—becomes more attainable for cities, watersheds, and
+          coasts. In a GGBS context, digital twins can:
+        </p>
+        <ul>
+          <li>Integrate green, grey, and blue infrastructure into a single virtual system;</li>
+          <li>Visualize current and projected conditions;</li>
+          <li>Test “what-if” scenarios before implementing changes on the ground;</li>
+          <li>Support adaptive pathways planning under deep uncertainty.</li>
+        </ul>
+        <p>
+          The smart dimension thus plays a central role in moving from static
+          designs toward continuous, learning-based management of
+          infrastructure systems.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Smart GGBS as a Bridge Between Science and Decision-Making</h2>
+      <p>
+        One of the motivations behind GGBS is to help bridge the gap between
+        scientific understanding, engineering practice, and real-world
+        decision-making. The smart dimension is where this bridge is often
+        built:
+      </p>
+      <ul>
+        <li>Scientific models are translated into decision-relevant tools;</li>
+        <li>Monitoring data are turned into information and insight;</li>
+        <li>Operational rules are tested and refined based on evidence;</li>
+        <li>Multiple objectives—safety, cost, ecology, equity—can be explored.</li>
+      </ul>
+      <p>
+        In teaching, research, and practice, this dimension offers many
+        opportunities for collaboration among engineers, data scientists,
+        planners, and policy experts.
+      </p>
+      <p>
+        Additional materials in the <a href="/resources/">Resources</a> section
+        will highlight case studies and examples where smart and intelligent
+        systems have been used to support integrated planning and resilient
+        infrastructure decisions.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© 2025 GGBS – Green–Grey–Blue–Smart Infrastructure Framework</div>
+      <div>Hosted on GitHub Pages</div>
+    </div>
+  </footer>
+</body>
+</html>
