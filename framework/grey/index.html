@@ -2,14 +2,466 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Grey Infrastructure – Test</title>
+  <title>Grey Infrastructure – GGBS Framework</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description"
+        content="Grey infrastructure within the GGBS Framework – engineered and structural systems for conveyance, storage, protection, and control in water and urban environments." />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --bg-alt: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --accent: #4b5563; /* grey accent for this page */
+      --accent-soft: #e5e7eb;
+      --border: #e5e7eb;
+      --max-width: 960px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: #2563eb; /* site-wide link color */
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      background-color: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+
+    .brand span:last-child {
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    nav a.active {
+      color: #2563eb;
+      font-weight: 600;
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    .breadcrumbs {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .breadcrumbs a {
+      color: var(--muted);
+    }
+
+    .breadcrumbs span {
+      margin: 0 0.25rem;
+    }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.2rem);
+      line-height: 1.25;
+      margin: 0 0 0.75rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 40rem;
+      margin: 0 0 1.2rem;
+    }
+
+    .subnav {
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .subnav a {
+      margin-right: 0.75rem;
+    }
+
+    .section {
+      margin-top: 2rem;
+      background-color: var(--bg-alt);
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      padding: 1.5rem 1.5rem 1.75rem;
+    }
+
+    .section h2 {
+      font-size: 1.4rem;
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+    }
+
+    .section p {
+      margin-top: 0.25rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .section ul {
+      padding-left: 1.2rem;
+      margin-top: 0.25rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .section li {
+      margin-bottom: 0.25rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.5rem;
+    }
+
+    .pill-row {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background-color: var(--accent-soft);
+      color: #374151;
+      border: 1px solid #d1d5db;
+      white-space: nowrap;
+    }
+
+    .note-box {
+      margin-top: 0.8rem;
+      padding: 0.75rem 0.9rem;
+      border-radius: 0.6rem;
+      background-color: #f3f4f6;
+      border: 1px solid #d1d5db;
+      font-size: 0.9rem;
+      color: #111827;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background-color: var(--bg-alt);
+      margin-top: 1rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.25rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 720px) {
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        position: static;
+      }
+
+      .nav-shell {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        justify-content: flex-start;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Grey Infrastructure – Test Page</h1>
-  <p>
-    If you can see this text, the <code>/framework/grey/</code> path is
-    correct. The previous blank page was likely due to an issue in the
-    earlier HTML/CSS.
-  </p>
+  <header>
+    <div class="nav-shell">
+      <div class="brand">
+        <span>GGBS</span>
+        <span>Green–Grey–Blue–Smart Infrastructure</span>
+      </div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/framework/" class="active">Framework</a>
+        <a href="/applications/">Applications</a>
+        <a href="/resources/">Resources</a>
+        <a href="/founder/">Founder</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumbs">
+      <a href="/">Home</a> <span>›</span>
+      <a href="/framework/">Framework</a> <span>›</span>
+      <span>Grey Infrastructure</span>
+    </div>
+
+    <section>
+      <div class="hero-eyebrow">Framework · Grey Dimension</div>
+      <h1 class="hero-title">Grey Infrastructure</h1>
+      <p class="hero-subtitle">
+        The Grey dimension of the GGBS Framework includes engineered and
+        structural systems that convey, store, regulate, or protect against
+        water. These systems provide capacity and robustness, and remain
+        essential components of resilient urban, watershed, and coastal
+        infrastructure.
+      </p>
+      <div class="subnav">
+        Related dimensions:
+        <a href="/framework/green/">Green</a>
+        <a href="/framework/blue/">Blue</a>
+        <a href="/framework/smart/">Smart</a>
+        <a href="/framework/overview/">Overview</a>
+      </div>
+      <div class="pill-row">
+        <span class="pill">Storm sewers &amp; culverts</span>
+        <span class="pill">Detention basins &amp; tunnels</span>
+        <span class="pill">Levees &amp; floodwalls</span>
+        <span class="pill">Dams &amp; reservoirs</span>
+        <span class="pill">Coastal structures</span>
+        <span class="pill">Pumps &amp; gates</span>
+      </div>
+    </section>
+
+    <section class="section two-col">
+      <div>
+        <h2>Role of Grey Infrastructure in GGBS</h2>
+        <p>
+          Grey infrastructure comprises the conventional engineered systems that
+          move and control water through pipes, channels, storage structures,
+          and protective works. It is often designed to meet regulatory
+          standards for capacity, safety, and reliability, especially under
+          extreme events.
+        </p>
+        <p>
+          Within the GGBS Framework, grey infrastructure:
+        </p>
+        <ul>
+          <li>Provides conveyance for stormwater, wastewater, and river flows;</li>
+          <li>Offers storage and attenuation through tanks, basins, tunnels, and reservoirs;</li>
+          <li>Protects communities from floods and coastal hazards via levees, floodwalls, and barriers;</li>
+          <li>Supports navigation, water supply, and hydropower generation in some settings.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Typical Grey Infrastructure Systems</h2>
+        <p>
+          Examples of grey systems considered in GGBS include:
+        </p>
+        <ul>
+          <li><strong>Storm sewers and culverts</strong> that drain streets and developed areas;</li>
+          <li><strong>Combined or separate sewer systems</strong> in older urban cores;</li>
+          <li><strong>Detention and retention basins</strong>, tanks, and deep tunnels for temporary storage;</li>
+          <li><strong>Levees and floodwalls</strong> that protect floodplains and urban areas;</li>
+          <li><strong>Dams and reservoirs</strong> used for flood control, water supply, and flow regulation;</li>
+          <li><strong>Coastal structures</strong> such as seawalls, revetments, groins, breakwaters, and surge barriers;</li>
+          <li><strong>Pumps, gates, and control structures</strong> that manage water levels and flows.</li>
+        </ul>
+        <div class="note-box">
+          Many of these systems are already in place and represent large sunk
+          investments. GGBS emphasizes how to operate, retrofit, and complement
+          them with green, blue, and smart measures.
+        </div>
+      </div>
+    </section>
+
+    <section class="section two-col">
+      <div>
+        <h2>Design, Safety, and Performance</h2>
+        <p>
+          Grey infrastructure is typically designed using hydrologic and
+          hydraulic analyses, with attention to design storms, return periods,
+          structural reliability, and safety factors. Key considerations
+          include:
+        </p>
+        <ul>
+          <li>Hydrologic inputs (rainfall intensity, duration, frequency);</li>
+          <li>Hydraulic capacity (pipe/channel sizes, slopes, roughness, backwater effects);</li>
+          <li>Structural design of walls, embankments, and foundations;</li>
+          <li>Design for extreme events, failure modes, and residual risk;</li>
+          <li>Operation rules for gates, pumps, and reservoirs.</li>
+        </ul>
+        <p>
+          As climate and land-use conditions change, the adequacy of existing
+          grey systems needs to be revisited through updated analysis and
+          monitoring.
+        </p>
+      </div>
+      <div>
+        <h2>Limitations and Opportunities</h2>
+        <p>
+          Traditional grey infrastructure can be very effective for specific
+          design conditions, but it has limitations:
+        </p>
+        <ul>
+          <li>High capital and maintenance costs;</li>
+          <li>Finite capacity that may be exceeded under rare or changing conditions;</li>
+          <li>Limited co-benefits beyond the primary function;</li>
+          <li>Potential environmental impacts if not well integrated with ecosystems.</li>
+        </ul>
+        <p>
+          Within GGBS, these limitations become opportunities to:
+        </p>
+        <ul>
+          <li>Combine grey systems with green measures to reduce loads;</li>
+          <li>Use blue systems (rivers, floodplains, wetlands) as part of the solution;</li>
+          <li>Apply smart/information systems to operate grey infrastructure more adaptively.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section two-col">
+      <div>
+        <h2>Integration with Green, Blue, and Smart Dimensions</h2>
+        <p>
+          The strength of GGBS lies in the deliberate integration of grey
+          infrastructure with other dimensions. Examples include:
+        </p>
+        <ul>
+          <li>
+            Using upstream green measures to reduce peak flows entering
+            downstream pipes and tunnels;
+          </li>
+          <li>
+            Designing storage tunnels and tanks that also support water-quality
+            goals by capturing first-flush or combined sewer overflows;
+          </li>
+          <li>
+            Aligning levees and floodwalls with restored floodplains or
+            wetlands to create hybrid blue–grey systems;
+          </li>
+          <li>
+            Equipping key grey assets with sensors, controls, and models to
+            enable smart, real-time operation.
+          </li>
+        </ul>
+        <p>
+          Grey infrastructure thus remains central, but it is no longer viewed
+          in isolation.
+        </p>
+      </div>
+      <div>
+        <h2>Lifecycle, Retrofit, and Equity Considerations</h2>
+        <p>
+          Many communities face decisions about whether to build new
+          infrastructure, retrofit existing systems, or change operations. GGBS
+          encourages a lifecycle perspective that considers:
+        </p>
+        <ul>
+          <li>Condition assessment and maintenance needs;</li>
+          <li>Retrofit options that add green or smart components;</li>
+          <li>Adaptation pathways as climate and land use evolve;</li>
+          <li>Distribution of benefits and residual risks across neighborhoods;</li>
+          <li>Opportunities to improve equity and resilience simultaneously.</li>
+        </ul>
+        <p>
+          Grey assets are long-lived; integrating them thoughtfully with green,
+          blue, and smart measures can significantly extend their value.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Grey Infrastructure in Practice</h2>
+      <p>
+        In practice, grey infrastructure remains a backbone of flood protection,
+        drainage, and coastal defense systems worldwide. Examples highlighted in
+        the <a href="/applications/">Applications</a> section include:
+      </p>
+      <ul>
+        <li>Urban drainage networks in older and newer developments;</li>
+        <li>Major levee and barrier systems for riverine and coastal floods;</li>
+        <li>Deep tunnels and storage projects in large cities;</li>
+        <li>Hybrid coastal protections that combine seawalls with nourished beaches or dunes.</li>
+      </ul>
+      <p>
+        The <a href="/resources/">Resources</a> section will provide additional
+        references on design standards, performance evaluation, and case
+        studies, as well as teaching materials that place grey systems in the
+        broader GGBS context.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© 2025 GGBS – Green–Grey–Blue–Smart Infrastructure Framework</div>
+      <div>Hosted on GitHub Pages</div>
+    </div>
+  </footer>
 </body>
 </html>
