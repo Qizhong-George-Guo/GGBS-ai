@@ -6,10 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="description"
-        content="GGBS – Green–Grey–Blue–Smart infrastructure framework for resilient, sustainable, and equitable water and urban systems." />
+        content="GGBS – an integrated Green–Grey–Blue–Smart infrastructure framework for resilient, sustainable, and equitable water and urban systems, founded by Professor Qizhong (George) Guo at Rutgers University–New Brunswick." />
 
-  <!-- Optional favicon if you have favicon.svg in the repo -->
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
   <style>
     :root {
@@ -23,9 +22,7 @@
       --max-width: 960px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -36,14 +33,8 @@
       line-height: 1.6;
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
     header {
       background-color: var(--bg-alt);
@@ -63,45 +54,24 @@
       gap: 1rem;
     }
 
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+    nav a { font-size: 0.9rem; color: var(--muted); }
+    nav a.active { color: var(--accent); font-weight: 600; }
+
     .brand {
       font-weight: 700;
       font-size: 1.05rem;
       letter-spacing: 0.03em;
-      display: flex;
-      align-items: baseline;
-      gap: 0.4rem;
+      display: flex; align-items: baseline; gap: 0.4rem;
     }
-
     .brand span:last-child {
-      font-weight: 500;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    nav {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    nav a.active {
-      color: var(--accent);
-      font-weight: 600;
+      font-weight: 500; font-size: 0.85rem; color: var(--muted);
     }
 
     main {
       max-width: var(--max-width);
       margin: 0 auto;
       padding: 2.5rem 1.25rem 3rem;
-    }
-
-    .hero {
-      margin-bottom: 2.5rem;
     }
 
     .hero-eyebrow {
@@ -114,114 +84,114 @@
     }
 
     .hero-title {
-      font-size: clamp(1.9rem, 4vw, 2.4rem);
-      line-height: 1.25;
-      margin: 0 0 0.75rem;
+      font-size: clamp(2rem, 3.8vw, 2.6rem);
+      line-height: 1.2;
+      margin: 0 0 0.6rem;
     }
 
     .hero-subtitle {
-      font-size: 1.02rem;
+      font-size: 1rem;
       color: var(--muted);
-      max-width: 40rem;
-      margin: 0 0 1.25rem;
+      max-width: 44rem;
+      margin: 0 0 1rem;
+    }
+
+    .hero-meta {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 0 0 1.4rem;
     }
 
     .pill-row {
-      display: inline-flex;
+      margin-top: 0.4rem;
+      display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
+      gap: 0.4rem;
     }
 
     .pill {
       font-size: 0.8rem;
-      padding: 0.25rem 0.6rem;
+      padding: 0.2rem 0.55rem;
       border-radius: 999px;
       background-color: var(--accent-soft);
-      color: var(--accent);
+      color: #1d4ed8;
       border: 1px solid #bfdbfe;
       white-space: nowrap;
     }
 
     .section {
-      margin-bottom: 2rem;
-      background-color: var(--bg-alt);
-      border-radius: 0.75rem;
-      border: 1px solid var(--border);
-      padding: 1.5rem 1.5rem 1.75rem;
+      margin-top: 2.2rem;
     }
 
     .section h2 {
-      font-size: 1.4rem;
-      margin-top: 0;
-      margin-bottom: 0.5rem;
+      font-size: 1.35rem;
+      margin-bottom: 0.9rem;
     }
 
-    .section p {
-      margin-top: 0.2rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .section ul {
-      padding-left: 1.2rem;
-      margin-top: 0.4rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .section li {
-      margin-bottom: 0.25rem;
-    }
-
-    .two-col {
+    .grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-      gap: 1.5rem;
+      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
 
-    .dimensions-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
-      margin-top: 0.75rem;
-    }
-
-    .dimension-card {
-      border-radius: 0.75rem;
+    .card {
+      background-color: var(--bg-alt);
       border: 1px solid var(--border);
-      padding: 0.9rem 0.9rem 1rem;
-      background-color: #f9fafb;
+      border-radius: 0.9rem;
+      padding: 1.2rem 1.3rem;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+      display: block;
     }
 
-    .dimension-card h3 {
-      margin: 0 0 0.35rem;
-      font-size: 1rem;
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      text-decoration: none;
     }
 
-    .dimension-card p {
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.35rem;
+      font-size: 1.1rem;
+    }
+
+    .card p {
       margin: 0;
-      font-size: 0.92rem;
+      font-size: 0.93rem;
       color: var(--muted);
     }
 
-    .founder-card {
-      display: grid;
-      grid-template-columns: minmax(0, 1.8fr) minmax(0, 1.4fr);
-      gap: 1.5rem;
+    .card-pills {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
     }
 
-    .founder-label {
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.78rem;
-      color: var(--accent);
-      font-weight: 600;
-      margin-bottom: 0.25rem;
+    .card-pill {
+      font-size: 0.75rem;
+      padding: 0.14rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background-color: #f9fafb;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .note-box {
+      margin-top: 1.4rem;
+      padding: 0.8rem 0.9rem;
+      border-radius: 0.75rem;
+      background-color: #eff6ff;
+      border: 1px solid #bfdbfe;
+      font-size: 0.9rem;
+      color: #1e3a8a;
     }
 
     footer {
       border-top: 1px solid var(--border);
       background-color: var(--bg-alt);
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
 
     .footer-inner {
@@ -237,206 +207,147 @@
     }
 
     @media (max-width: 720px) {
-      .two-col,
-      .founder-card {
-        grid-template-columns: 1fr;
-      }
-
-      header {
-        position: static;
-      }
-
-      .nav-shell {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav {
-        justify-content: flex-start;
-      }
+      header { position: static; }
+      .nav-shell { flex-direction: column; align-items: flex-start; }
+      nav { justify-content: flex-start; }
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <div class="nav-shell">
-      <div class="brand">
-        <span>GGBS</span>
-        <span>Green–Grey–Blue–Smart Infrastructure</span>
-      </div>
-      <nav>
-        <a href="/" class="active">Home</a>
-        <a href="/framework/">Framework</a>
-        <a href="/applications/">Applications</a>
-        <a href="/resources/">Resources</a>
-        <a href="/founder/">Founder</a>
-        <a href="/contact/">Contact</a>
-      </nav>
+<header>
+  <div class="nav-shell">
+    <div class="brand">
+      <span>GGBS</span>
+      <span>Green–Grey–Blue–Smart Infrastructure</span>
     </div>
-  </header>
+    <nav>
+      <a href="/" class="active">Home</a>
+      <a href="/framework/">Framework</a>
+      <a href="/applications/">Applications</a>
+      <a href="/resources/">Resources</a>
+      <a href="/founder/">Founder</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-eyebrow">Infrastructure for a Changing World</div>
-      <h1 class="hero-title">
-        GGBS – Green–Grey–Blue–Smart Infrastructure Framework
-      </h1>
-      <p class="hero-subtitle">
-        The GGBS Framework provides an integrated way to plan, design, and
-        manage water and urban infrastructure by combining
-        <strong>green</strong>, <strong>grey</strong>, <strong>blue</strong>,
-        and <strong>smart</strong> systems for resilient, sustainable, and
-        adaptive cities, watersheds, and coasts.
-      </p>
-      <div class="pill-row">
-        <span class="pill">Urban drainage &amp; stormwater</span>
-        <span class="pill">Watersheds &amp; river basins</span>
-        <span class="pill">Estuaries &amp; coasts</span>
-        <span class="pill">Flood resilience</span>
-        <span class="pill">AI &amp; intelligent systems</span>
-      </div>
-    </section>
+<main>
+  <section>
+    <div class="hero-eyebrow">GGBS Framework</div>
+    <h1 class="hero-title">Green–Grey–Blue–Smart Infrastructure</h1>
+    <p class="hero-subtitle">
+      A practical framework for integrating green, grey, blue, and smart
+      infrastructure to support resilient, sustainable, and equitable water and
+      urban systems.
+    </p>
+    <p class="hero-meta">
+      Founded by Professor Qizhong (George) Guo,  
+      Department of Civil &amp; Environmental Engineering,  
+      Rutgers University–New Brunswick, New Jersey, U.S.A.
+    </p>
+    <div class="pill-row">
+      <span class="pill">Urban stormwater</span>
+      <span class="pill">Watersheds &amp; basins</span>
+      <span class="pill">Estuaries &amp; coasts</span>
+      <span class="pill">Flood risk &amp; resilience</span>
+      <span class="pill">Teaching &amp; practice</span>
+    </div>
+  </section>
 
-    <section class="section two-col">
-      <div>
-        <h2>What Is the GGBS Framework?</h2>
+  <!-- Core cards -->
+  <section class="section">
+    <h2>Explore GGBS</h2>
+
+    <div class="grid">
+      <!-- Framework -->
+      <a class="card" href="/framework/">
+        <h3>Framework</h3>
         <p>
-          Cities, rivers, and coasts face growing pressures from rapid
-          development, aging infrastructure, extreme weather, sea-level rise,
-          and evolving socio-economic conditions. Traditional approaches often
-          treat green, grey, blue, and smart components as separate domains.
-          The GGBS Framework provides an <strong>integrated, system-scale
-          perspective</strong>.
+          Overview of the Green–Grey–Blue–Smart concept, including definitions,
+          relationships, and examples across scales.
         </p>
-        <p>GGBS emphasizes:</p>
-        <ul>
-          <li>Synergy across green, grey, blue, and smart infrastructure;</li>
-          <li>Balancing nature-based and engineered solutions;</li>
-          <li>Recognizing water as both hazard and resource;</li>
-          <li>Using data, models, and intelligent systems for adaptive management;</li>
-          <li>Designing with climate variability and long-term change in mind.</li>
-        </ul>
-        <p>
-          The framework supports planning and operations across
-          <strong>urban stormwater</strong>,
-          <strong>watersheds</strong>, <strong>estuaries</strong>, and
-          <strong>coastal environments</strong>, helping communities build
-          resilience while improving environmental and social outcomes.
-        </p>
-      </div>
-      <div>
-        <h2>Four Complementary Dimensions</h2>
-        <div class="dimensions-grid">
-          <div class="dimension-card">
-            <h3>Green</h3>
-            <p>
-              Nature-based systems such as green roofs, rain gardens, bioswales,
-              and permeable pavements that infiltrate, store, and treat runoff
-              while providing co-benefits like cooling, habitat, and urban
-              amenity.
-            </p>
-          </div>
-          <div class="dimension-card">
-            <h3>Grey</h3>
-            <p>
-              Engineered systems including sewers, culverts, tunnels, levees,
-              reservoirs, and coastal structures that provide capacity,
-              robustness, and controlled conveyance for water.
-            </p>
-          </div>
-          <div class="dimension-card">
-            <h3>Blue</h3>
-            <p>
-              Rivers, lakes, wetlands, estuaries, and coastal waters that
-              transport water and sediment, store floodwaters, and support
-              ecosystems and navigation.
-            </p>
-          </div>
-          <div class="dimension-card">
-            <h3>Smart</h3>
-            <p>
-              Monitoring networks, hydrologic and hydrodynamic models, data
-              platforms, optimization tools, and AI-enabled analytics for
-              planning, forecasting, and real-time operation. This dimension
-              incorporates the intelligent systems concepts previously developed
-              under GGBI.
-            </p>
-          </div>
+        <div class="card-pills">
+          <span class="card-pill">Green</span>
+          <span class="card-pill">Grey</span>
+          <span class="card-pill">Blue</span>
+          <span class="card-pill">Smart</span>
         </div>
-      </div>
-    </section>
+      </a>
 
-    <section class="section">
-      <h2>Applications</h2>
-      <p>
-        The GGBS Framework supports integrated solutions across a wide range of
-        water and infrastructure challenges, including:
-      </p>
-      <ul>
-        <li>Urban stormwater and “Sponge City” practices;</li>
-        <li>Watershed and river-basin resilience planning;</li>
-        <li>Riverine, estuarine, and coastal processes and management;</li>
-        <li>Pluvial, fluvial, and coastal flood mitigation;</li>
-        <li>Nature-based and hybrid coastal protection measures;</li>
-        <li>Sediment transport and water quality management;</li>
-        <li>AI-enabled monitoring, modeling, and decision-support systems.</li>
-      </ul>
-      <p>
-        Future updates will add concept notes, case studies, instructional
-        materials, and simplified modeling tools based on real-world
-        applications.
-      </p>
-    </section>
+      <!-- Applications -->
+      <a class="card" href="/applications/">
+        <h3>Applications</h3>
+        <p>
+          Case types and example applications in cities, watersheds, estuaries,
+          and coasts, with emphasis on flood resilience and co-benefits.
+        </p>
+        <div class="card-pills">
+          <span class="card-pill">Urban stormwater</span>
+          <span class="card-pill">Watersheds</span>
+          <span class="card-pill">Estuaries &amp; coasts</span>
+          <span class="card-pill">Flood risk</span>
+        </div>
+      </a>
 
-    <section class="section founder-card">
-      <div>
-        <div class="founder-label">Founder</div>
-        <h2>About Professor Qizhong (George) Guo</h2>
+      <!-- Resources -->
+      <a class="card" href="/resources/">
+        <h3>Resources</h3>
         <p>
-          Professor Qizhong (George) Guo is a civil and environmental engineer
-          whose work spans hydrology, hydraulics, stormwater management, coastal
-          processes, sediment transport, and resilient infrastructure. Over his
-          academic career, he has led and contributed to studies on urban
-          flooding, green infrastructure, watershed and river-basin planning,
-          coastal protection, and nature-based solutions.
+          Publications, technical reports, teaching materials, tools, data,
+          and media that support understanding and use of the GGBS Framework.
         </p>
-        <p>
-          His research integrates <strong>green</strong>,
-          <strong>grey</strong>, <strong>blue</strong>, and
-          <strong>smart</strong> systems—an approach now synthesized into the
-          <strong>GGBS Framework</strong>. Through scholarship, teaching,
-          professional leadership, and mentoring, Professor Guo promotes
-          rigorous science, practical engineering, and system-scale resilience
-          thinking.
-        </p>
-        <p>
-          This website reflects his ongoing effort to organize, synthesize, and
-          share concepts, case studies, models, and educational materials
-          related to the GGBS Framework.
-        </p>
-      </div>
-      <div>
-        <h3>Contact &amp; Collaboration</h3>
-        <p>
-          The GGBS Framework is intended to support students, researchers,
-          practitioners, and decision-makers working on resilient and
-          sustainable infrastructure.
-        </p>
-        <p>
-          If you are interested in collaboration or teaching materials, please
-          reach out through your usual professional channels (for example, your
-          university or research group email). A dedicated contact form may be
-          added in future updates.
-        </p>
-      </div>
-    </section>
-  </main>
+        <div class="card-pills">
+          <span class="card-pill">Publications</span>
+          <span class="card-pill">Technical reports</span>
+          <span class="card-pill">Teaching</span>
+          <span class="card-pill">Tools &amp; media</span>
+        </div>
+      </a>
 
-  <footer>
-    <div class="footer-inner">
-      <div>© 2025 GGBS – Green–Grey–Blue–Smart Infrastructure Framework</div>
-      <div>Hosted on GitHub Pages</div>
+      <!-- Founder -->
+      <a class="card" href="/founder/">
+        <h3>Founder</h3>
+        <p>
+          Background on Professor Qizhong (George) Guo and the evolution of the
+          GGBS Framework across research, teaching, and practice.
+        </p>
+        <div class="card-pills">
+          <span class="card-pill">Academic profile</span>
+          <span class="card-pill">GGBS story</span>
+        </div>
+      </a>
+
+      <!-- Contact -->
+      <a class="card" href="/contact/">
+        <h3>Contact</h3>
+        <p>
+          Contact information for inquiries, collaborations, speaking
+          invitations, and access to teaching or project materials.
+        </p>
+        <div class="card-pills">
+          <span class="card-pill">Collaboration</span>
+          <span class="card-pill">Speaking</span>
+          <span class="card-pill">Teaching</span>
+        </div>
+      </a>
     </div>
-  </footer>
+
+    <div class="note-box">
+      The GGBS Framework is intended to evolve. As additional case studies,
+      tools, and teaching resources are added, this site will serve as a
+      practical archive for students, collaborators, and practitioners.
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2025 GGBS – Green–Grey–Blue–Smart Infrastructure Framework</div>
+    <div>Hosted on GitHub Pages</div>
+  </div>
+</footer>
+
 </body>
 </html>
+
