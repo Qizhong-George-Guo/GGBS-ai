@@ -2,18 +2,463 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Green Infrastructure – Test</title>
+  <title>Green Infrastructure – GGBS Framework</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description"
+        content="Green infrastructure within the GGBS Framework – nature-based solutions for infiltration, storage, cooling, habitat, and co-benefits in urban and watershed systems." />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --bg-alt: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --accent: #16a34a; /* green accent for this page */
+      --accent-soft: #dcfce7;
+      --border: #e5e7eb;
+      --max-width: 960px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: #2563eb; /* keep site-wide link color consistent */
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      background-color: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+
+    .brand span:last-child {
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    nav a.active {
+      color: #2563eb;
+      font-weight: 600;
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    .breadcrumbs {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .breadcrumbs a {
+      color: var(--muted);
+    }
+
+    .breadcrumbs span {
+      margin: 0 0.25rem;
+    }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.2rem);
+      line-height: 1.25;
+      margin: 0 0 0.75rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 40rem;
+      margin: 0 0 1.2rem;
+    }
+
+    .subnav {
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .subnav a {
+      margin-right: 0.75rem;
+    }
+
+    .section {
+      margin-top: 2rem;
+      background-color: var(--bg-alt);
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      padding: 1.5rem 1.5rem 1.75rem;
+    }
+
+    .section h2 {
+      font-size: 1.4rem;
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+    }
+
+    .section p {
+      margin-top: 0.25rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .section ul {
+      padding-left: 1.2rem;
+      margin-top: 0.25rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .section li {
+      margin-bottom: 0.25rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.5rem;
+    }
+
+    .pill-row {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background-color: var(--accent-soft);
+      color: #166534;
+      border: 1px solid #bbf7d0;
+      white-space: nowrap;
+    }
+
+    .note-box {
+      margin-top: 0.8rem;
+      padding: 0.75rem 0.9rem;
+      border-radius: 0.6rem;
+      background-color: #ecfdf5;
+      border: 1px solid #bbf7d0;
+      font-size: 0.9rem;
+      color: #065f46;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background-color: var(--bg-alt);
+      margin-top: 1rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.25rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 720px) {
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        position: static;
+      }
+
+      .nav-shell {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        justify-content: flex-start;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Green Infrastructure – Test Page</h1>
-  <p>
-    If you can see this text, the <code>/framework/green/</code> path is
-    correct. The previous blank page was likely due to an issue in the
-    earlier HTML/CSS.
-  </p>
-  <p>
-    Once this is confirmed, we can paste back the full styled version of the
-    Green Infrastructure page.
-  </p>
+  <header>
+    <div class="nav-shell">
+      <div class="brand">
+        <span>GGBS</span>
+        <span>Green–Grey–Blue–Smart Infrastructure</span>
+      </div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/framework/" class="active">Framework</a>
+        <a href="/applications/">Applications</a>
+        <a href="/resources/">Resources</a>
+        <a href="/founder/">Founder</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumbs">
+      <a href="/">Home</a> <span>›</span>
+      <a href="/framework/">Framework</a> <span>›</span>
+      <span>Green Infrastructure</span>
+    </div>
+
+    <section>
+      <div class="hero-eyebrow">Framework · Green Dimension</div>
+      <h1 class="hero-title">Green Infrastructure</h1>
+      <p class="hero-subtitle">
+        The Green dimension of the GGBS Framework includes vegetation-based and
+        nature-based systems that infiltrate, store, slow, and treat water
+        while providing multiple co-benefits such as cooling, habitat, and
+        improved urban space.
+      </p>
+      <div class="subnav">
+        Related dimensions:
+        <a href="/framework/grey/">Grey</a>
+        <a href="/framework/blue/">Blue</a>
+        <a href="/framework/smart/">Smart</a>
+        <a href="/framework/overview/">Overview</a>
+      </div>
+      <div class="pill-row">
+        <span class="pill">Rain gardens</span>
+        <span class="pill">Green roofs</span>
+        <span class="pill">Bioswales</span>
+        <span class="pill">Permeable pavements</span>
+        <span class="pill">Urban trees</span>
+        <span class="pill">Wetlands &amp; riparian buffers</span>
+      </div>
+    </section>
+
+    <section class="section two-col">
+      <div>
+        <h2>Role of Green Infrastructure in GGBS</h2>
+        <p>
+          Green infrastructure emphasizes the use of soils, vegetation, and
+          landscape features to manage water more like a natural system. It
+          complements conventional drainage and flood-protection works by
+          reducing runoff volume, slowing peak flows, enhancing infiltration,
+          and improving water quality.
+        </p>
+        <p>
+          Within the GGBS Framework, green infrastructure:
+        </p>
+        <ul>
+          <li>Intercepts and stores rainfall before it becomes runoff;</li>
+          <li>Promotes infiltration and groundwater recharge where appropriate;</li>
+          <li>Filters sediments and pollutants through soil and vegetation;</li>
+          <li>Reduces heat stress and improves microclimates;</li>
+          <li>Creates habitat and enhances urban amenity.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Examples of Green Infrastructure Measures</h2>
+        <p>
+          The green dimension covers a range of site-scale and neighborhood-scale
+          practices, including:
+        </p>
+        <ul>
+          <li><strong>Rain gardens and bioretention systems</strong> that capture and infiltrate roof or street runoff;</li>
+          <li><strong>Green roofs</strong> that retain rainfall, reduce peak flows, and provide thermal benefits;</li>
+          <li><strong>Bioswales and vegetated channels</strong> that slow and treat road or parking-lot runoff;</li>
+          <li><strong>Permeable pavements</strong> that allow water to infiltrate through surfaces such as parking lots and low-speed streets;</li>
+          <li><strong>Urban trees and pocket parks</strong> that intercept rainfall and provide shading;</li>
+          <li><strong>Constructed wetlands and riparian buffers</strong> that treat water and support ecosystems at larger scales.</li>
+        </ul>
+        <div class="note-box">
+          In dense urban areas, individual practices are often small, but their
+          cumulative effect across a watershed or district can be significant
+          when planned as part of an integrated GGBS strategy.
+        </div>
+      </div>
+    </section>
+
+    <section class="section two-col">
+      <div>
+        <h2>Hydrologic and Hydraulic Functions</h2>
+        <p>
+          From a hydrologic and hydraulic perspective, green infrastructure acts
+          on multiple components of the rainfall–runoff process:
+        </p>
+        <ul>
+          <li>Initial abstraction (interception, depression storage, infiltration);</li>
+          <li>Runoff attenuation and temporary storage;</li>
+          <li>Baseflow or delayed return flows in some settings;</li>
+          <li>Modification of peak timing and peak magnitude at the catchment scale.</li>
+        </ul>
+        <p>
+          These functions can be represented in models ranging from simple
+          design tools to fully distributed hydrologic–hydraulic simulations.
+          Calibration and field data remain important for realistic performance
+          estimates.
+        </p>
+      </div>
+      <div>
+        <h2>Co-Benefits Beyond Hydrology</h2>
+        <p>
+          Green infrastructure is often justified not only for flood and water
+          quality benefits, but also for a broader set of co-benefits:
+        </p>
+        <ul>
+          <li>Urban cooling and heat-island mitigation;</li>
+          <li>Improved air quality and shading for pedestrians;</li>
+          <li>Enhanced aesthetics and recreational space;</li>
+          <li>Habitat creation and biodiversity support;</li>
+          <li>Potential increases in property value and neighborhood quality.</li>
+        </ul>
+        <p>
+          In GGBS, these co-benefits are recognized as part of the system-scale
+          value of green measures, especially when compared with purely grey
+          alternatives.
+        </p>
+      </div>
+    </section>
+
+    <section class="section two-col">
+      <div>
+        <h2>Integration with Grey and Blue Systems</h2>
+        <p>
+          Green infrastructure rarely operates in isolation. Its full value is
+          realized when it is deliberately integrated with grey and blue
+          systems:
+        </p>
+        <ul>
+          <li>
+            Upstream green measures can reduce the size or operating demands of
+            downstream pipes, tunnels, or storage tanks;
+          </li>
+          <li>
+            Roadside bioswales and permeable pavements can connect to
+            conventional storm sewers, improving water quality at outfalls;
+          </li>
+          <li>
+            Urban green networks can be aligned with downstream rivers, lakes,
+            or wetlands to support baseflow and water quality objectives.
+          </li>
+        </ul>
+        <p>
+          GGBS provides a framework for co-designing these interactions rather
+          than treating each system separately.
+        </p>
+      </div>
+      <div>
+        <h2>Planning and Design Considerations</h2>
+        <p>
+          Effective green infrastructure planning typically requires attention
+          to:
+        </p>
+        <ul>
+          <li>Site-scale feasibility (soils, slopes, utilities, land availability);</li>
+          <li>Maintenance responsibilities and long-term performance;</li>
+          <li>Climate conditions and extreme events (including drought and heat);</li>
+          <li>Equity and distribution of benefits across neighborhoods;</li>
+          <li>Integration with land-use planning and community priorities.</li>
+        </ul>
+        <p>
+          At the system level, green infrastructure can be located and sized to
+          complement grey capacity and to achieve specific performance targets
+          for flows, levels, or pollutant loads.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Green Infrastructure in Practice</h2>
+      <p>
+        In practice, green infrastructure has been applied in a wide variety of
+        contexts, including:
+      </p>
+      <ul>
+        <li>Street-scale retrofits in older urban neighborhoods;</li>
+        <li>New developments designed with low-impact or sponge-city principles;</li>
+        <li>Campus, park, and institutional landscapes;</li>
+        <li>Watershed-scale strategies that combine urban green measures with wetlands and riparian restoration.</li>
+      </ul>
+      <p>
+        The <a href="/applications/">Applications</a> section highlights example
+        projects and case studies where green measures are combined with grey,
+        blue, and smart components to improve flood resilience, water quality,
+        and urban livability.
+      </p>
+      <p>
+        Additional materials in the <a href="/resources/">Resources</a> section
+        will include technical references, modeling studies, and teaching
+        materials related to green infrastructure design and performance.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© 2025 GGBS – Green–Grey–Blue–Smart Infrastructure Framework</div>
+      <div>Hosted on GitHub Pages</div>
+    </div>
+  </footer>
 </body>
 </html>
