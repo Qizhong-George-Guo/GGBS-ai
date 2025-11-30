@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Technical Reports – GGBS Resources</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description"
+        content="Technical reports, project documents, and grey literature related to the GGBS Framework and its applications in stormwater, watershed, estuarine, and coastal systems." />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --bg-alt: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --border: #e5e7eb;
+      --max-width: 960px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background-color: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+    nav a { font-size: 0.9rem; color: var(--muted); }
+    nav a.active { color: var(--accent); font-weight: 600; }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+      display: flex; align-items: baseline; gap: 0.4rem;
+    }
+    .brand span:last-child {
+      font-weight: 500; font-size: 0.85rem; color: var(--muted);
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    .breadcrumbs {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+    .breadcrumbs a { color: var(--muted); }
+    .breadcrumbs span { margin: 0 0.25rem; }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.2rem);
+      line-height: 1.25;
+      margin: 0 0 0.75rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 42rem;
+      margin: 0 0 1.2rem;
+    }
+
+    .section {
+      margin-top: 2rem;
+      background-color: var(--bg-alt);
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      padding: 1.5rem 1.5rem 1.75rem;
+    }
+
+    .section h2 {
+      font-size: 1.3rem;
+      margin-top: 0;
+      margin-bottom: 0.8rem;
+    }
+
+    .subheading {
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      font-size: 1.05rem;
+    }
+
+    .report-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .report-item {
+      margin-bottom: 1.25rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .report-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .report-title {
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .report-meta {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .report-links a {
+      margin-right: 0.7rem;
+      font-size: 0.9rem;
+    }
+
+    .tag-row {
+      margin-top: 0.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      background-color: var(--accent-soft);
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      white-space: nowrap;
+    }
+
+    .note-box {
+      margin-top: 1rem;
+      padding: 0.75rem 0.9rem;
+      border-radius: 0.6rem;
+      background-color: #eff6ff;
+      border: 1px solid #bfdbfe;
+      font-size: 0.9rem;
+      color: #1e3a8a;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background-color: var(--bg-alt);
+      margin-top: 1rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.25rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="nav-shell">
+    <div class="brand">
+      <span>GGBS</span>
+      <span>Green–Grey–Blue–Smart Infrastructure</span>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/framework/">Framework</a>
+      <a href="/applications/">Applications</a>
+      <a href="/resources/" class="active">Resources</a>
+      <a href="/founder/">Founder</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="breadcrumbs">
+    <a href="/">Home</a> ›
+    <a href="/resources/">Resources</a> ›
+    <span>Technical Reports</span>
+  </div>
+
+  <section>
+    <div class="hero-eyebrow">Resources</div>
+    <h1 class="hero-title">Technical Reports &amp; Project Documents</h1>
+    <p class="hero-subtitle">
+      Selected technical reports, project documents, and grey literature related
+      to the Green–Grey–Blue–Smart (GGBS) Framework and its applications.
+      Items below are placeholders — you can replace them with your actual
+      reports and PDF links.
+    </p>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- URBAN & STORMWATER REPORTS -->
+  <!-- ============================================================= -->
+
+  <section class="section">
+    <div class="subheading">Urban Stormwater &amp; Green Infrastructure</div>
+
+    <ul class="report-list">
+
+      <li class="report-item">
+        <div class="report-title">
+          Performance Evaluation of Green Stormwater Infrastructure in Dense Urban Neighborhoods
+        </div>
+        <div class="report-meta">
+          Technical Report, City of Exampleville, 2022 — Principal Investigator: Q. Guo
+        </div>
+        <div class="report-links">
+          <a href="#">PDF</a>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Urban stormwater</span>
+          <span class="tag">Green infrastructure</span>
+          <span class="tag">Monitoring</span>
+        </div>
+      </li>
+
+      <li class="report-item">
+        <div class="report-title">
+          Retrofit Strategies for Combined Sewer Overflow Reduction Using Green–Grey–Blue Portfolios
+        </div>
+        <div class="report-meta">
+          Consulting Report, Regional Utility Authority, 2020 — Lead Author: Q. Guo
+        </div>
+        <div class="report-links">
+          <a href="#">PDF</a>
+        </div>
+        <div class="tag-row">
+          <span class="tag">CSO</span>
+          <span class="tag">Retrofit</span>
+          <span class="tag">Portfolio design</span>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- WATERSHEDS & BASINS -->
+  <!-- ============================================================= -->
+
+  <section class="section">
+    <div class="subheading">Watersheds, Basins &amp; River Systems</div>
+
+    <ul class="report-list">
+
+      <li class="report-item">
+        <div class="report-title">
+          Strategies for a Resilient, Sustainable, and Equitable Mississippi River Basin
+        </div>
+        <div class="report-meta">
+          Special Report, 2023 — Q. Guo et al.
+        </div>
+        <div class="report-links">
+          <a href="#">PDF</a>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Mississippi River Basin</span>
+          <span class="tag">Watershed resilience</span>
+          <span class="tag">Policy &amp; planning</span>
+        </div>
+      </li>
+
+      <li class="report-item">
+        <div class="report-title">
+          Integrated Floodplain Management Plan for the Example River Basin
+        </div>
+        <div class="report-meta">
+          Basin Management Commission, 2019 — Technical Lead: Q. Guo
+        </div>
+        <div class="report-links">
+          <a href="#">PDF</a>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Floodplain</span>
+          <span class="tag">River basin</span>
+          <span class="tag">Hybrid measures</span>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- ESTUARIES & COASTS -->
+  <!-- ============================================================= -->
+
+  <section class="section">
+    <div class="subheading">Estuaries, Coasts &amp; Surge</div>
+
+    <ul class="report-list">
+
+      <li class="report-item">
+        <div class="report-title">
+          Coastal Flood Risk Assessment for Example Bay and Adjacent Estuaries
+        </div>
+        <div class="report-meta">
+          Technical Advisory Report, 2021 — Coastal Resilience Task Force
+        </div>
+        <div class="report-links">
+          <a href="#">PDF</a>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Coastal flooding</span>
+          <span class="tag">Storm surge</span>
+          <span class="tag">Risk assessment</span>
+        </div>
+      </li>
+
+      <li class="report-item">
+        <div class="report-title">
+          Sediment Management and Navigation Channel Maintenance in a Tidal Estuary
+        </div>
+        <div class="report-meta">
+          Port Authority Technical Report, 2018 — Contributing Author: Q. Guo
+        </div>
+        <div class="report-links">
+          <a href="#">PDF</a>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Estuary</span>
+          <span class="tag">Sediment</span>
+          <span class="tag">Navigation</span>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- SPONGE CITY / LID / INTERNATIONAL CASES -->
+  <!-- ============================================================= -->
+
+  <section class="section">
+    <div class="subheading">Sponge City, LID &amp; International Case Studies</div>
+
+    <ul class="report-list">
+
+      <li class="report-item">
+        <div class="report-title">
+          Sponge City Implementation Plan for a High-Density Historic District
+        </div>
+        <div class="report-meta">
+          Municipal Planning Bureau, 2020 — International Expert Advisor: Q. Guo
+        </div>
+        <div class="report-links">
+          <a href="#">PDF</a>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Sponge City</span>
+          <span class="tag">High-density urban core</span>
+          <span class="tag">International</span>
+        </div>
+      </li>
+
+      <li class="report-item">
+        <div class="report-title">
+          Low-Impact Development Demonstration Projects: Design and Monitoring Summary
+        </div>
+        <div class="report-meta">
+          LID Demonstration Program, 2017 — Lead Technical Consultant: Q. Guo
+        </div>
+        <div class="report-links">
+          <a href="#">PDF</a>
+        </div>
+        <div class="tag-row">
+          <span class="tag">LID</span>
+          <span class="tag">Demonstration projects</span>
+          <span class="tag">Monitoring</span>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+  <section class="note-box">
+    To publish actual reports, upload each PDF to your GitHub repository
+    (for example under <code>/publications/</code> or <code>/reports/</code>),
+    then replace the <code>href="#”</code> in the links above with the full path,
+    such as <code>/reports/mississippi-basin-strategies.pdf</code>.  
+    Each report will then have a stable, shareable URL on <strong>GGBS.ai</strong>.
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2025 GGBS – Green–Grey–Blue–Smart Infrastructure Framework</div>
+    <div>Hosted on GitHub Pages</div>
+  </div>
+</footer>
+
+</body>
+</html>
