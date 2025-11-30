@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Resources – GGBS Framework</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description"
+        content="Resources for the GGBS Framework – publications, technical reports, teaching materials, tools, data, and media that support Green–Grey–Blue–Smart infrastructure applications." />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --bg-alt: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --border: #e5e7eb;
+      --max-width: 960px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background-color: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+    nav a { font-size: 0.9rem; color: var(--muted); }
+    nav a.active { color: var(--accent); font-weight: 600; }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+      display: flex; align-items: baseline; gap: 0.4rem;
+    }
+    .brand span:last-child {
+      font-weight: 500; font-size: 0.85rem; color: var(--muted);
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    .breadcrumbs {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+    .breadcrumbs a { color: var(--muted); }
+    .breadcrumbs span { margin: 0 0.25rem; }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.2rem);
+      line-height: 1.25;
+      margin: 0 0 0.75rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 40rem;
+      margin: 0 0 1.2rem;
+    }
+
+    .section {
+      margin-top: 2rem;
+      background-color: var(--bg-alt);
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      padding: 1.5rem 1.5rem 1.75rem;
+    }
+
+    .section h2 {
+      font-size: 1.35rem;
+      margin-top: 0;
+      margin-bottom: 0.8rem;
+    }
+
+    .section p {
+      margin-top: 0.25rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .card {
+      background-color: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1rem 1.2rem;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+      display: block;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      text-decoration: none;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+      font-size: 1.1rem;
+    }
+
+    .card p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .pill-row {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background-color: var(--accent-soft);
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      white-space: nowrap;
+    }
+
+    .note-box {
+      margin-top: 0.8rem;
+      padding: 0.75rem 0.9rem;
+      border-radius: 0.6rem;
+      background-color: #eff6ff;
+      border: 1px solid #bfdbfe;
+      font-size: 0.9rem;
+      color: #1e3a8a;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background-color: var(--bg-alt);
+      margin-top: 1rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.25rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="nav-shell">
+    <div class="brand">
+      <span>GGBS</span>
+      <span>Green–Grey–Blue–Smart Infrastructure</span>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/framework/">Framework</a>
+      <a href="/applications/">Applications</a>
+      <a href="/resources/" class="active">Resources</a>
+      <a href="/founder/">Founder</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="breadcrumbs">
+    <a href="/">Home</a> › <span>Resources</span>
+  </div>
+
+  <section>
+    <div class="hero-eyebrow">Resources</div>
+    <h1 class="hero-title">Resources for GGBS</h1>
+    <p class="hero-subtitle">
+      This section brings together publications, technical reports, teaching
+      materials, tools, and media that support the Green–Grey–Blue–Smart
+      (GGBS) Framework and its applications in cities, watersheds, estuaries,
+      and coasts.
+    </p>
+    <div class="pill-row">
+      <span class="pill">Publications</span>
+      <span class="pill">Technical reports</span>
+      <span class="pill">Teaching</span>
+      <span class="pill">Tools &amp; data</span>
+      <span class="pill">Media &amp; outreach</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Resource Categories</h2>
+    <p>
+      Over time, these pages can host downloadable PDFs, slide decks, case
+      study summaries, and links to external repositories. Each item can have
+      its own stable URL so it can be cited or shared individually.
+    </p>
+
+    <div class="grid">
+
+      <a class="card" href="/resources/publications/">
+        <h3>Publications</h3>
+        <p>
+          Peer-reviewed papers, book chapters, and key overview articles related
+          to the GGBS Framework and its components.
+        </p>
+      </a>
+
+      <a class="card" href="/resources/technical-reports/">
+        <h3>Technical Reports &amp; Project Documents</h3>
+        <p>
+          Project reports, design studies, advisory documents, and grey
+          literature that illustrate how GGBS ideas have been applied in
+          practice.
+        </p>
+      </a>
+
+      <a class="card" href="/resources/teaching/">
+        <h3>Teaching Materials</h3>
+        <p>
+          Lecture notes, course modules, example problems, and infographics for
+          education on stormwater, watersheds, coasts, and GGBS.
+        </p>
+      </a>
+
+      <a class="card" href="/resources/tools-data/">
+        <h3>Tools, Models &amp; Data</h3>
+        <p>
+          Links to models, scripts, data sets, and simple calculators that
+          support GGBS analysis and design.
+        </p>
+      </a>
+
+      <a class="card" href="/resources/media/">
+        <h3>Media, Talks &amp; Outreach</h3>
+        <p>
+          Presentations, invited talks, interviews, visual explainers, and
+          short videos on GGBS-related topics.
+        </p>
+      </a>
+
+    </div>
+
+    <div class="note-box">
+      As the site evolves, each category can be organized as a simple list or
+      table of resources, with titles, short descriptions, and direct links to
+      files or external pages.
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>How These Resources Connect to GGBS</h2>
+    <p>
+      The Resources section is intended to serve both as a personal archive and
+      as a practical library for collaborators, students, and practitioners who
+      want to apply the GGBS Framework.
+    </p>
+    <ul>
+      <li>
+        Publications provide the scientific and conceptual foundations for
+        GGBS.
+      </li>
+      <li>
+        Technical reports and project documents show how concepts are applied
+        in real-world settings.
+      </li>
+      <li>
+        Teaching materials help train the next generation of engineers and
+        planners.
+      </li>
+      <li>
+        Tools and data support hands-on exploration and analysis.
+      </li>
+      <li>
+        Media and outreach materials help explain GGBS ideas to broader
+        audiences.
+      </li>
+    </ul>
+    <p>
+      Many resources will naturally link back to specific
+      <a href="/applications/">Applications</a> and
+      <a href="/framework/">Framework</a> pages, reinforcing the structure of
+      the site.
+    </p>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2025 GGBS – Green–Grey–Blue–Smart Infrastructure Framework</div>
+    <div>Hosted on GitHub Pages</div>
+  </div>
+</footer>
+
+</body>
+</html>
