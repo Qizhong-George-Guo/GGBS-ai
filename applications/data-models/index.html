@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Data, Models & AI – GGBS Applications</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description"
+        content="Data, models, and AI applications of the GGBS Framework – integrating monitoring networks, hydrologic, hydraulic, and coastal models, forecasting, and digital twins to support resilient water and urban systems." />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --bg-alt: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --border: #e5e7eb;
+      --max-width: 960px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background-color: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+    nav a { font-size: 0.9rem; color: var(--muted); }
+    nav a.active { color: var(--accent); font-weight: 600; }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+      display: flex; align-items: baseline; gap: 0.4rem;
+    }
+    .brand span:last-child {
+      font-weight: 500; font-size: 0.85rem; color: var(--muted);
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    .breadcrumbs {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+    .breadcrumbs a { color: var(--muted); }
+    .breadcrumbs span { margin: 0 0.25rem; }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.2rem);
+      line-height: 1.25;
+      margin: 0 0 0.75rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 40rem;
+      margin: 0 0 1.2rem;
+    }
+
+    .subnav {
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .subnav a { margin-right: 0.75rem; }
+
+    .section {
+      margin-top: 2rem;
+      background-color: var(--bg-alt);
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      padding: 1.5rem 1.5rem 1.75rem;
+    }
+
+    .section h2 {
+      font-size: 1.35rem;
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+    }
+
+    .section p {
+      margin-top: 0.25rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .section ul {
+      padding-left: 1.2rem;
+      margin-top: 0.25rem;
+      margin-bottom: 0.4rem;
+    }
+    .section li { margin-bottom: 0.25rem; }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.5rem;
+    }
+
+    .pill-row {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background-color: var(--accent-soft);
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      white-space: nowrap;
+    }
+
+    .mini-card {
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      padding: 0.85rem 0.95rem;
+      background-color: #f9fafb;
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .mini-card strong { display: block; margin-bottom: 0.2rem; }
+
+    .note-box {
+      margin-top: 0.8rem;
+      padding: 0.75rem 0.9rem;
+      border-radius: 0.6rem;
+      background-color: #eff6ff;
+      border: 1px solid #bfdbfe;
+      font-size: 0.9rem;
+      color: #1e3a8a;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background-color: var(--bg-alt);
+      margin-top: 1rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.25rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 720px) {
+      .two-col { grid-template-columns: 1fr; }
+      header { position: static; }
+      .nav-shell { flex-direction: column; align-items: flex-start; }
+      nav { justify-content: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="nav-shell">
+    <div class="brand">
+      <span>GGBS</span>
+      <span>Green–Grey–Blue–Smart Infrastructure</span>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/framework/">Framework</a>
+      <a href="/applications/" class="active">Applications</a>
+      <a href="/resources/">Resources</a>
+      <a href="/founder/">Founder</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="breadcrumbs">
+    <a href="/">Home</a> <span>›</span>
+    <a href="/applications/">Applications</a> <span>›</span>
+    <span>Data, Models &amp; AI</span>
+  </div>
+
+  <section>
+    <div class="hero-eyebrow">Applications · Smart Systems</div>
+    <h1 class="hero-title">Data, Models &amp; AI</h1>
+    <p class="hero-subtitle">
+      The Smart dimension of GGBS integrates monitoring networks, hydrologic
+      and hydraulic models, forecasting systems, digital twins, and emerging AI
+      tools to support planning, design, and operation of resilient water and
+      urban systems.
+    </p>
+
+    <div class="subnav">
+      Other application areas:
+      <a href="/applications/urban-stormwater/">Urban Stormwater</a>
+      <a href="/applications/watersheds/">Watersheds</a>
+      <a href="/applications/estuaries/">Estuaries &amp; Tidal Rivers</a>
+      <a href="/applications/coasts/">Coasts &amp; Shorelines</a>
+      <a href="/applications/flood-risk/">Flood Risk &amp; Resilience</a>
+      <a href="/applications/sponge-city/">Sponge City / Low-Impact</a>
+    </div>
+
+    <div class="pill-row">
+      <span class="pill">Monitoring</span>
+      <span class="pill">Hydrology &amp; hydraulics</span>
+      <span class="pill">Coastal modeling</span>
+      <span class="pill">Forecasting</span>
+      <span class="pill">Digital twins</span>
+      <span class="pill">AI &amp; analytics</span>
+    </div>
+  </section>
+
+  <section class="section two-col">
+    <div>
+      <h2>The Smart Dimension of GGBS</h2>
+      <p>
+        Data and modeling tools allow planners and engineers to understand
+        complex interactions across green, grey, and blue systems. They support
+        decisions at every stage:
+      </p>
+      <ul>
+        <li><strong>Assessment</strong> – mapping hazards, flows, and loads;</li>
+        <li><strong>Design</strong> – testing scenarios and sizing systems;</li>
+        <li><strong>Operations</strong> – managing real-time conditions;</li>
+        <li><strong>Evaluation</strong> – tracking performance over time.</li>
+      </ul>
+      <p>
+        As climate and land use evolve, Smart tools enable adaptive and
+        evidence-based management.
+      </p>
+    </div>
+
+    <div>
+      <h2>Monitoring Networks</h2>
+      <p>
+        Reliable data is the foundation of Smart infrastructure. Key elements
+        include:
+      </p>
+      <ul>
+        <li>Rainfall and weather observations;</li>
+        <li>Streamflow, water-level, and groundwater gauges;</li>
+        <li>Tide and surge stations along coasts and estuaries;</li>
+        <li>Water-quality sensors (temperature, turbidity, nutrients, DO);</li>
+        <li>Remote-sensing imagery and LiDAR for land cover and elevation;</li>
+        <li>Sensor networks in green and grey infrastructure systems.</li>
+      </ul>
+      <p>
+        These data support model calibration, validation, and real-time
+        decision-making.
+      </p>
+    </div>
+  </section>
+
+  <section class="section two-col">
+    <div>
+      <h2>Hydrologic, Hydraulic &amp; Coastal Models</h2>
+      <p>
+        Models are essential tools for understanding and predicting system
+        behavior. Common types include:
+      </p>
+      <ul>
+        <li><strong>Hydrologic models</strong> for rainfall–runoff, soil moisture, and evapotranspiration;</li>
+        <li><strong>1D/2D hydraulic models</strong> for channel flows, floodplain inundation, and urban drainage;</li>
+        <li><strong>Estuarine–coastal models</strong> for tides, salinity, waves, and storm surge;</li>
+        <li><strong>Water-quality and sediment models</strong> for nutrients, turbidity, and sediment transport.</li>
+      </ul>
+      <p>
+        These models help test infrastructure portfolios, evaluate operations,
+        and explore “what-if” scenarios.
+      </p>
+    </div>
+
+    <div>
+      <h2>Forecasting, Early Warning &amp; Real-Time Control</h2>
+      <p>
+        Smart systems extend beyond prediction to active management:
+      </p>
+      <ul>
+        <li>Short-term forecasts of rainfall, streamflow, waves, and surge;</li>
+        <li>Early warning for pluvial, fluvial, and coastal flooding;</li>
+        <li>Real-time control of gates, pumps, and storage facilities;</li>
+        <li>Seasonal and long-term scenario analysis;</li>
+        <li>Integrated dashboards for operators and emergency managers.</li>
+      </ul>
+      <p>
+        These capabilities reduce risk and improve system reliability during
+        extreme events.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>AI, Machine Learning &amp; Digital Twins</h2>
+
+    <div class="mini-card">
+      <strong>Machine learning for prediction</strong>
+      ML models can forecast rainfall, flows, water quality, and coastal
+      hazards using large datasets and high-frequency monitoring.
+    </div>
+
+    <div class="mini-card">
+      <strong>AI-driven optimization</strong>
+      Optimization algorithms can identify efficient portfolios of green, grey,
+      and blue measures under complex constraints.
+    </div>
+
+    <div class="mini-card">
+      <strong>Digital twins</strong>
+      Coupling real-time data with models, digital twins allow operators to
+      test scenarios, monitor performance, and make informed adjustments.
+    </div>
+
+    <div class="mini-card">
+      <strong>Natural language AI and decision support</strong>
+      AI systems can assist in synthesizing documents, generating reports,
+      summarizing monitoring data, and supporting planning workflows.
+    </div>
+  </section>
+
+  <section class="section two-col">
+    <div>
+      <h2>Applications Across the GGBS Dimensions</h2>
+      <p>
+        Data, models, and AI support all other GGBS application areas:
+      </p>
+      <ul>
+        <li>Optimizing green infrastructure siting and performance;</li>
+        <li>Evaluating grey system upgrades and operations;</li>
+        <li>Understanding blue system dynamics in rivers, estuaries, and coasts;</li>
+        <li>Monitoring, predicting, and managing flood risks;</li>
+        <li>Guiding Sponge City / LID district planning;</li>
+        <li>Tracking long-term system change under climate and land-use shifts.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2>Data Integration &amp; Interoperability</h2>
+      <p>
+        Modern Smart systems rely on integrated data flows:
+      </p>
+      <ul>
+        <li>GIS layers for land use, hydrology, infrastructure, and hazards;</li>
+        <li>APIs for sensor networks, forecasts, and modeling platforms;</li>
+        <li>Cloud-based storage and analysis pipelines;</li>
+        <li>Visualization dashboards and web maps;</li>
+        <li>Cross-agency data sharing and governance structures.</li>
+      </ul>
+      <p>
+        These elements help ensure that planning, engineering, and operations
+        are aligned and efficient.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Connections to Other GGBS Applications</h2>
+    <p>
+      The Smart dimension underpins all other GGBS applications:
+    </p>
+    <ul>
+      <li><a href="/applications/urban-stormwater/">Urban Stormwater</a> – GI performance, drainage models, monitoring.</li>
+      <li><a href="/applications/watersheds/">Watersheds</a> – hydrology, sediment, water quality, reservoir operations.</li>
+      <li><a href="/applications/estuaries/">Estuaries &amp; Tidal Rivers</a> – tides, salinity, water quality, sensors.</li>
+      <li><a href="/applications/coasts/">Coasts &amp; Shorelines</a> – wave, surge, and beach models.</li>
+      <li><a href="/applications/flood-risk/">Flood Risk &amp; Resilience</a> – forecasting and early warning.</li>
+      <li><a href="/applications/sponge-city/">Sponge City</a> – planning and optimization tools.</li>
+    </ul>
+    <p>
+      As Smart tools continue to evolve, this section can highlight examples of
+      digital twins, AI-enhanced analysis, and integrated data systems that
+      support more resilient and equitable outcomes.
+    </p>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2025 GGBS – Green–Grey–Blue–Smart Infrastructure Framework</div>
+    <div>Hosted on GitHub Pages</div>
+  </div>
+</footer>
+
+</body>
+</html>
