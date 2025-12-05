@@ -1,2 +1,2 @@
 # GGBS-website 
-Launched but directed to GGBI.ai 
+NOT deployed, it is directed to GGBI instead.
